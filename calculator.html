@@ -1,0 +1,63 @@
+<html>
+  <head><strong>Calculator</strong>
+</head>
+<body>
+<form name="calculator">
+<fieldset>
+<input type="text" name="result">
+ <br/>
+
+<input type="button" value="AC" OnClick='clearDisplay()'>
+<input type="button" value="+/-">
+<input type="button" value="%"  OnClick='runpercentage()'>
+<input type="button" value="/"  OnClick='runOperator('/')'>
+<br/>
+<input type="button" value=" 7 " OnClick="display(7)">
+<input type="button" value=" 8 " OnClick="display(8)">
+<input type="button" value=" 9 " OnClick="display(9)">
+<input type="button" value="*"   OnClick="runOperator('*')">
+<br/>
+<input type="button" value=" 4 " OnClick="display(4)">
+<input type="button" value=" 5 " OnClick="display(5)">
+<input type="button" value=" 6 " OnClick="display(7)">
+<input type="button" value="-"   OnClick="runOperator('-')">
+<br/>
+<input type="button" value=" 1 " OnClick="display(1)">
+<input type="button" value=" 2 " OnClick="display(2)">
+<input type="button" value=" 3 " OnClick="display(3)">
+<input type="button" value="+"   OnClick="runOperator('+')">
+<br/>
+<input type="button" value="      0     " OnClick="display(0)">
+<input type="button" value=" . ">
+<input type="button" value=" = " OnClick="equals()">
+</fieldset>
+</form>
+  </body>
+
+<script text/javascript>
+function display(num){
+ document.calculator.result.value +=num;
+};
+
+function runOperator(operator){
+		if(!document.calculator.result.value=="" && !document.calculator.result.value.endsWith('+') && !document.calculator.result.value.endsWith('/') && !document.calculator.result.value.endsWith('-') && !document.calculator.result.value.endsWith('*'))
+			document.calculator.result.value +=operator;
+
+};
+
+function clearDisplay(){
+  document.calculator.result.value = "";
+};
+
+
+
+function equals(){
+	document.calculator.result.value = eval(document.calculator.result.value);
+}
+
+function runpercentage(){
+  document.calculator.result.value = eval(document.calculator.result.value) * 0.01;
+}
+
+</script>
+</html>
